@@ -1,4 +1,4 @@
-package com.khakimova.problem_9;
+package com.khakimova.easy;
 
 import org.junit.Test;
 
