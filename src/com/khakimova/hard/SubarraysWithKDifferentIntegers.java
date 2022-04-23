@@ -21,7 +21,7 @@ import static org.junit.Assert.assertEquals;
  * Output: 7
  * Explanation: Subarrays formed with exactly 2 different integers: [1,2], [2,1], [1,2], [2,3], [1,2,1], [2,1,2], [1,2,1,
  *
- * Решение:
+ * Solution:
  * 1. We should count number of subarrays with atmost k distinct elements using sliding window technic. These will include subarrays with [1 .. k] distinct elements.
  * 2. We should count number of subarraus with atmost (k-1) distinct elements. These will include subarrays with [1 .. (k-1)] distinct elements.
  * 3. (Number from 1. - Number from 2.) is an answer!
