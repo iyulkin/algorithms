@@ -20,7 +20,6 @@ public class FirstBadVersion {
 
     public int firstBadVersion(int n) {
         int start = 1, finish = n, medium;
-        boolean mediumIsBad, beforeMediumIsBad;
 
         while (start < finish) {
             medium = start + (finish - start) / 2;
