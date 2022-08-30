@@ -1,4 +1,4 @@
-package com.khakimova.medium;
+package com.khakimova.java.medium;
 
 import org.junit.Test;
 

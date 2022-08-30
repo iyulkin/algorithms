@@ -1,4 +1,4 @@
-package com.khakimova.easy;
+package com.khakimova.java.easy;
 
 import org.junit.Test;
 

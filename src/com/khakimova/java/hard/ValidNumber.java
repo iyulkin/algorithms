@@ -1,4 +1,4 @@
-package com.khakimova.hard;
+package com.khakimova.java.hard;
 
 import org.junit.Test;
 

@@ -1,6 +1,5 @@
-package com.khakimova.easy;
+package com.khakimova.java.easy;
 
-import com.sun.source.tree.Tree;
 import org.junit.Test;
 
 import java.util.*;

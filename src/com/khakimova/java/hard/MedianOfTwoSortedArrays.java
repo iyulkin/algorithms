@@ -1,4 +1,4 @@
-package com.khakimova.hard;
+package com.khakimova.java.hard;
 
 import java.util.Arrays;
 import java.util.List;
