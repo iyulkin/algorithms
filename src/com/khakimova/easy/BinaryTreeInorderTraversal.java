@@ -1,62 +1,64 @@
 package com.khakimova.easy;
 
-import com.sun.source.tree.Tree;
 import org.junit.Test;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Stack;
 
-import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertTrue;
 
 /**
- * Given the root of a binary tree, return the preorder traversal of its nodes' values.
+ * Given the root of a binary tree, return the inorder traversal of its nodes' values.
  */
-public class BinaryTreePreorderTraversal {
+public class BinaryTreeInorderTraversal {
     // DFS iteratively
-    public List<Integer> preorderTraversal(TreeNode root) {
+    public List<Integer> inorderTraversal(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
         List<Integer> traversal = new ArrayList<>();
         Stack<TreeNode> stack = new Stack<>();
-        stack.push(root);
+        TreeNode node = root;
 
-        while (!stack.isEmpty()) {
-            TreeNode node = stack.pop();
-            if (node.right != null) {
-                stack.push(node.right);
+        while (node != null || !stack.isEmpty()) {
+            while (node != null) {
+                stack.push(node);
+                node = node.left;
             }
-            if (node.left != null) {
-                stack.push(node.left);
-            }
-            traversal.add(node.val);
+            traversal.add(stack.peek().val);
+            node = stack.pop().right;
         }
         return traversal;
     }
 
     // DFS recursively
-    public List<Integer> preorderTraversalRecursive(TreeNode root) {
+    public List<Integer> inorderTraversalRecursive(TreeNode root) {
         if (root == null) {
             return Collections.emptyList();
         }
         List<Integer> result = new ArrayList();
+        result.addAll(inorderTraversalRecursive(root.left));
         result.add(root.val);
-        result.addAll(preorderTraversalRecursive(root.left));
-        result.addAll(preorderTraversalRecursive(root.right));
+        result.addAll(inorderTraversalRecursive(root.right));
 
         return result;
     }
 
     @Test
-    public void preorderTraversalTest() {
+    public void inorderTraversalTest() {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3, null, null), null));
-        assertTrue(List.of(1, 2, 3).equals(preorderTraversal(root)));
+        assertTrue(List.of(1, 3, 2).equals(inorderTraversal(root)));
+
+        root = new TreeNode(3, new TreeNode(1), new TreeNode(2));
+        assertTrue(List.of(1, 3, 2).equals(inorderTraversal(root)));
     }
 
     @Test
-    public void preorderTraversalRecursiveTest() {
+    public void inorderTraversalRecursiveTest() {
         TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3, null, null), null));
-        assertTrue(List.of(1, 2, 3).equals(preorderTraversalRecursive(root)));
+        assertTrue(List.of(1, 3, 2).equals(inorderTraversalRecursive(root)));
     }
 
     private class TreeNode {
