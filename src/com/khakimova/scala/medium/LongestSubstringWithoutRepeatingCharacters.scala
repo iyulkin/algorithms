@@ -4,30 +4,27 @@ import com.khakimova.scala.medium.LongestSubstringWithoutRepeatingCharacters.len
 import org.junit.Assert.assertEquals
 import org.junit.Test
 
-import scala.collection.mutable.HashMap
+import scala.collection.mutable
 
 object LongestSubstringWithoutRepeatingCharacters {
   def lengthOfLongestSubstring(s: String): Int = {
-        var resultLength = 0
-        var leftPointer = 0
-        var rightPointer = 0
-        val charactersMap = new HashMap[Char, Int]()
+    var resultLength = 0
+    var leftPointer = 0
+    val charactersSet = new mutable.HashSet[Char]()
 
-        while (rightPointer < s.length) {
-          val characterAtRightPointer = s.charAt(rightPointer)
-          charactersMap.get(characterAtRightPointer) match {
-            case Some(index) => leftPointer = index + 1
-            case _ =>
-          }
-          charactersMap.put(characterAtRightPointer, rightPointer)
-          rightPointer - leftPointer + 1 match {
-            case currentLength if currentLength > resultLength => resultLength = currentLength
-            case _ =>
-          }
-          rightPointer = rightPointer + 1
+    (0 until s.length).foreach { rightPointer =>
+      val characterAtRightPointer = s.charAt(rightPointer)
+      if (!charactersSet.add(characterAtRightPointer)) {
+        while (s.charAt(leftPointer) != characterAtRightPointer) {
+          charactersSet.remove(s.charAt(leftPointer))
+          leftPointer += 1
         }
-        resultLength
+        leftPointer += 1
+      }
+      if (charactersSet.size > resultLength) resultLength = charactersSet.size
     }
+    resultLength
+  }
 }
 
 class LongestSubstringWithoutRepeatingCharacters {

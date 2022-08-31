@@ -2,7 +2,6 @@ package com.khakimova.scala.medium
 
 import com.khakimova.scala.medium.RotateImage.rotate
 import org.hamcrest.MatcherAssert.assertThat
-import org.hamcrest.core.Is.is
 import org.hamcrest.core.IsEqual.equalTo
 import org.junit.Test
 
