@@ -1,4 +1,4 @@
-package com.khakimova.java.yandex;
+package com.khakimova.java.yandex.interview1;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;

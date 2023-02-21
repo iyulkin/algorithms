@@ -1,4 +1,4 @@
-package com.khakimova.java.yandex;
+package com.khakimova.java.yandex.interview2;
 
 import java.util.Iterator;
 import java.util.List;
