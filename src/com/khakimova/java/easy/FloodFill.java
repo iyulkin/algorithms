@@ -1,13 +1,9 @@
 package com.khakimova.java.easy;
 
-import org.junit.Test;
-
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Set;
+import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
 
