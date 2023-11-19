@@ -1,4 +1,7 @@
-# leetcode
-Solving problems from leetcode.com
+# algorithms
 
-jdk 11+
+Solving problems:
+
+* [leetcode](/leetcode)
+* [yandex](/yandex)
+* [codebattle](/codebattle)
